@@ -1,8 +1,9 @@
 import React from "react";
-import {Text, View, StyleSheet, TouchableOpacity, Image} from "react-native";
+import {Text, View, StyleSheet, TouchableOpacity, Image, SafeAreaView} from "react-native";
 
 export default function Header(){
     return(
+        <SafeAreaView>
         <View style={styles.header}>
             <TouchableOpacity>
                <Image
@@ -21,12 +22,13 @@ export default function Header(){
 
 
         </View>
+        </SafeAreaView>
     );
 }
 
 const styles =  StyleSheet.create({
  header:{
-    height: 140,
+    height: 55,
     backgroundColor: '#FFF',
     flexDirection: 'row',
     alignItems: 'center',
