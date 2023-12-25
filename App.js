@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import Header from './src/Header';
+import List from './src/List';
 
 export default function App() {
   const [feed, setFeed] = useState([
@@ -57,6 +58,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header/>
+
+      <FlatList
+      showsVerticalScrollIndicator={false}
+      keyExtractor={(item) => item.id }
+      data={feed}
+      renderItem={({item}) => <List data={item}/> }
+      />
+    
+
       <StatusBar style="auto" />
     </View>
   );
