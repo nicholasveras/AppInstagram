@@ -8,6 +8,15 @@ export default function List(props){
         require('../img/like.png')
     }
 
+    function mostrarLikes(likers){
+      if(likers === 0){
+        return;
+      }
+
+      return(
+        <Text style={styles.likes}>{likers} {likers > 1 ? 'curtidas' : 'curtida'}</Text>
+      );
+    }
 
     return(
      <View>
@@ -51,6 +60,16 @@ export default function List(props){
 
         </View>
 
+        {mostrarLikes(props.data.likers)}
+
+        <Text style={styles.nomeRodape}>
+            {props.data.nome}
+        </Text>
+
+        <Text style={styles.descRodape}>
+            {props.data.descricao}
+        </Text>
+
      </View>   
     );
 }
@@ -86,5 +105,20 @@ const styles = StyleSheet.create({
   },
   btnsend: {
     paddingLeft: 5
+  },
+  likes: {
+    fontWeight: 'bold',
+    marginLeft: 5
+  },
+  nomeRodape: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    paddingLeft: 5,
+  },
+  descRodape: {
+    paddingLeft: 5,
+    paddingBottom: 10,
+    fontSize: 15,
   }
+
 });
