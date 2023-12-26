@@ -42,6 +42,5 @@ const styles =  StyleSheet.create({
  send:{
     width: 23,
     height: 23,
-
     }
 })
